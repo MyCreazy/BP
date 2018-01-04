@@ -1,0 +1,2645 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Better517na.Core.DB.DBRouteHelper</name>
+    </assembly>
+    <members>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MWriteServerInfo">
+            <summary>
+            写服务器信息表
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MServerInfo">
+            <summary>
+            服务器信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.keyID">
+            <summary>
+             主键ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.iP">
+            <summary>
+             IP
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.port">
+            <summary>
+             端口
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.failoverIP">
+            <summary>
+             Failover-IP
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.failoverPort">
+            <summary>
+             Failover-端口
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MServerInfo.dataCenter">
+            <summary>
+             机房
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MServerInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.KeyID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.FailoverIP">
+            <summary>
+            Failover-IP
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.FailoverPort">
+            <summary>
+            Failover-端口
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MServerInfo.DataCenter">
+            <summary>
+            机房
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MWriteServerInfo.writeServerDBKeyID">
+            <summary>
+             写库映射主键ID
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MWriteServerInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MWriteServerInfo.WriteServerDBKeyID">
+            <summary>
+            写库映射主键ID
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ERuleType">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.ERuleType.SpecialKey">
+            <summary>
+            1特定值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.ERuleType.HashKey">
+            <summary>
+            2哈希值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.ERuleType.BizTime">
+            <summary>
+            3时间值
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.IDBRoute">
+            <summary>
+            数据库路由组件执行接口
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IDBRoute.GetDataSet(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            获得数据信息
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="str">执行语句</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IDBRoute.GetDataInfo(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            获得数据信息
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="str">执行语句</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IDBRoute.MySqlDbCreate(System.Data.IDbTransaction,System.Data.IDbConnection,System.String)">
+            <summary>
+            执行建库建表操作脚本
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">数据库连接</param>
+            <param name="scriptContent">建库建表脚本</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IDBRoute.MsSqlDbCreate(System.Data.IDbTransaction,System.Data.IDbConnection,System.String)">
+            <summary>
+            执行建库建表操作脚本
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">数据库连接</param>
+            <param name="scriptContent">建库建表脚本</param>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BConnectionRouteTrans">
+            <summary>
+            ConnectionRoute
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BConnectionRouteTrans.item">
+            <summary>
+            MConnectionRoute
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BConnectionRouteTrans.#ctor(Better517na.Core.DB.DBRouteHelper.MConnectionRoute)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="model">MConnectionRoute</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BConnectionRouteTrans.ExecuteMethods">
+            <summary>
+            执行数据持久化
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo">
+            <summary>
+            数据库信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.keyID">
+            <summary>
+             主键ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.connectionType">
+            <summary>
+             连接类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.databaseType">
+            <summary>
+             数据库类型
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.KeyID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.ConnectionType">
+            <summary>
+            连接类型
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDatabaseInfo.DatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DBRouteHelper">
+            <summary>
+            客户端方法
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetSingleConnection(Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo)">
+            <summary>
+            获得读、写连接【取就近机房】
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetDoubleConnection(Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo)">
+            <summary>
+            获得读、写连接【双读双写，取两个机房】
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果 key:DataCenter机房</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetMutiConnection(Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo)">
+            <summary>
+            获得区间内的多个读、写连接【取就近机房】
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetSingleTableName(Better517na.Core.DB.DBRouteHelper.MSingleTableInfo)">
+            <summary>
+            获得表名
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetMutiTableName(Better517na.Core.DB.DBRouteHelper.MMutiTableInfo)">
+            <summary>
+            获得区间内的多个表名,
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetCreateDataSet(Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo)">
+            <summary>
+            【建库建表程序】获得需要建库的真实库名，若库已存在，则返回连接
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetMutiTableCreateName(Better517na.Core.DB.DBRouteHelper.MMutiTableInfo)">
+            <summary>
+            获得区间内的多个创建表名
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.CreateDataSet(Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo,System.String@)">
+            <summary>
+            【建库建表程序】自动建库
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果 key:realDatabaseName; value:connString</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.CreateTable(Better517na.Core.DB.DBRouteHelper.MCreateTableInfo,System.String@)">
+            <summary>
+            【建库建表程序】自动建表
+            </summary>
+            <param name="model">实体对象</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.CreateOneTable(Better517na.Core.DB.DBRouteHelper.MCreateOneTable)">
+            <summary>
+            创建表 Table not exist 时使用,建表脚本要在SqlScript中有配置才可
+            </summary>
+            <param name="model">实体对象</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.EncryptionEngine(System.String,System.Int32,System.Boolean)">
+            <summary>
+            加解密算法
+            </summary>
+            <param name="src">待处理串</param>
+            <param name="encryptType">加解密方式 1到10</param>
+            <param name="encrypt">T加密 F解密</param>
+            <returns>处理后串</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetTarConnection(System.String,System.Boolean,System.String)">
+            <summary>
+            获取指定数据库名 的连接
+            </summary>
+            <param name="realDataBaseName">真实数据库名</param>
+            <param name="isread">是否取读库</param>
+            <param name="applicationName">应用程序名</param>
+            <returns>数据库连接</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelper.GetAllDBAndTableName(Better517na.Core.DB.DBRouteHelper.MAllTableInfo)">
+            <summary>
+            指定时间段内 所有 库名 表名
+            </summary>
+            <param name="model">参数</param>
+            <returns>真实库名 表名</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo">
+            <summary>
+            单数据库拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.applicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.isRead">
+            <summary>
+            是否取读连接
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.dbnameSwitchTime">
+            <summary>
+            选择基础库名的时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.baseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.ApplicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.IsRead">
+            <summary>
+            是否取读连接
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.HashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.BizTime">
+            <summary>
+            数据时间，即KeyId时间，若未知时间，则传入Now，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.DbnameSwitchTime">
+            <summary>
+            数据库名选择时间 可以不传
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo.BaseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.EDatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EDatabaseType.SQLServer">
+            <summary>
+            1SQLServer
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EDatabaseType.MySQL">
+            <summary>
+            2MySQL
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ConfigMonitor">
+            <summary>
+            配置文件监听器类：监听配置文件变更 
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.callParamConfig">
+            <summary>
+            连接配置 Configuration
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.map">
+            <summary>
+            连接配置文件 ExeConfigurationFileMap
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.#cctor">
+            <summary>
+            构造函数:初始化读取配置文件，为文件注册侦听器
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.MonitorConfigFile">
+            <summary>
+            创建配置文件发动监听器
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.RaiseEvent">
+            <summary>
+            向订阅者发布信息（配置文件变更时）
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.InitConnectionConfig">
+            <summary>
+            初始化数据库连接配置
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.OnChanged(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            文件改变：重新加载配置
+            </summary>
+            <param name="source">事件源 object</param>
+            <param name="e">事件参数 FileSystemEventArgs</param>
+        </member>
+        <member name="E:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.ConfigModifyInfoEvent">
+            <summary>
+            配置文件变更事件 event
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.CallParamConfig">
+            <summary>
+            配置对象 Configuration
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ConfigMonitor.EventHandlerAfterConfigModify">
+            <summary>
+            配置文件变更代理 delegate
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BInnerBusiness">
+            <summary>
+            业务层
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetRuleValue(System.String,System.UInt32,System.DateTime,Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo)">
+            <summary>
+            替换规则值
+            </summary>
+            <param name="specialKey">specialKey</param>
+            <param name="hashKey">hashKey</param>
+            <param name="bizTime">bizTime</param>
+            <param name="rule">规则</param>
+            <returns>规则值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetRuleValue(System.String,System.UInt32,System.DateTime,System.DateTime,System.Int32,Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo)">
+            <summary>
+            替换规则值
+            </summary>
+            <param name="specialKey">specialKey</param>
+            <param name="hashKey">hashKey</param>
+            <param name="beginBizTime">beginBizTime</param>
+            <param name="endBizTime">endBizTime</param>
+            <param name="tableType">0:查询获取表，1：数据库生成表</param>
+            <param name="rule">规则</param>
+            <returns>规则值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetAllRuleValue(System.DateTime,System.DateTime,Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo)">
+            <summary>
+            获取所有 替换规则值 无条件
+            </summary>
+            <param name="beginBizTime">beginBizTime</param>
+            <param name="endBizTime">endBizTime</param>
+            <param name="rule">规则</param>
+            <returns>规则值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetCalendarWeekNum(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            根据日期返回周数【周一算作一周的第一天】
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="tableType">0:查询获取表，1：数据库生成表</param>
+            <returns>517的日期周数</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetNatureDate(System.Int32,System.Int32)">
+            <summary>
+            根据周数返回本周第一天日期  周一日期
+            </summary>
+            <param name="year">开始时间</param>
+            <param name="weekNum">结束时间</param>
+            <returns>517的本周第一天日期</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetSTime(System.String)">
+            <summary>
+            获得起始时间
+            </summary>
+            <param name="stime">转换前时间</param>
+            <returns>转换后时间</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetETime(System.String)">
+            <summary>
+            获得结束时间
+            </summary>
+            <param name="etime">转换前时间</param>
+            <returns>转换后时间</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetSHashKey(System.String)">
+            <summary>
+            获得起始值
+            </summary>
+            <param name="shashKey">转换前值</param>
+            <returns>转换后值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetEHashKey(System.String)">
+            <summary>
+            获得结束值
+            </summary>
+            <param name="ehashKey">转换前值</param>
+            <returns>转换后值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BInnerBusiness.GetConn(Better517na.Core.DB.DBRouteHelper.MServerInfo,Better517na.Core.DB.DBRouteHelper.MDBAccountInfo,System.String,Better517na.Core.DB.DBRouteHelper.EDatabaseType,Better517na.Core.DB.DBRouteHelper.EConnectionType)">
+            <summary>
+            拼接连接
+            </summary>
+            <param name="currServer">MServerInfo</param>
+            <param name="account">MDBAccountInfo</param>
+            <param name="realDBName">真实库名</param>
+            <param name="databaseType">EDatabaseType</param>
+            <param name="connectionType">EConnectionType</param>
+            <returns>IDbConnection</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BEncrypt">
+            <summary>
+            加密解密算法
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BEncrypt.GetHash(System.String)">
+            <summary>
+            GetHash
+            </summary>
+            <param name="str">string</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BEncrypt.EncryptionEngine(System.String,System.Int32,System.Boolean)">
+            <summary>
+            加解密算法
+            </summary>
+            <param name="src">待处理串</param>
+            <param name="encryptType">加解密方式 1:my每次都不一样 2:DES 3:RC2 4:Better 5:RSA每次都不一样</param>
+            <param name="encrypt">T加密 F解密</param>
+            <returns>处理后串</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo">
+            <summary>
+            自动建表参数
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.connString">
+            <summary>
+            连接字符串(真实库名、服务器地址、创建表账号)
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.databaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.tableInfos">
+            <summary>
+            建表信息
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.Conn">
+            <summary>
+            连接(真实库名、服务器地址)
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.DatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableInfo.TableInfos">
+            <summary>
+            建表信息
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.EScriptType">
+            <summary>
+            脚本类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.CreateDB">
+            <summary>
+            1:创建数据库
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.Accredit">
+            <summary>
+            2:授权
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.CreateTable">
+            <summary>
+            3:创建表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.ModifyTable">
+            <summary>
+            4:修改表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.CreateView">
+            <summary>
+            5:创建视图
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.ModifyView">
+            <summary>
+            6:修改视图
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EScriptType.InitValue">
+            <summary>
+            7:初始化数据
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping">
+            <summary>
+            基础库名配置信息
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.keyID">
+            <summary>
+             主键ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.databaseName">
+            <summary>
+             真实基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.dbmappingName">
+            <summary>
+             映射基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.starDate">
+            <summary>
+             适用起始时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.endDate">
+            <summary>
+             使用截止时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.state">
+            <summary>
+             状态
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.addTime">
+            <summary>
+             添加时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.modifyTime">
+            <summary>
+             时间戳
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.KeyID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.DatabaseName">
+            <summary>
+            真实基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.DbMappingName">
+            <summary>
+            映射基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.StarDate">
+            <summary>
+            适用起始时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.EndDate">
+            <summary>
+            使用截止时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDBNameMapping.ModifyTime">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MSqlScript">
+            <summary>
+            脚本管理表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.databaseName">
+            <summary>
+             基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.tableName">
+            <summary>
+             基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.objectNameTemplate">
+            <summary>
+             对象名模板
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.scriptContent">
+            <summary>
+             脚本内容
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.scriptType">
+            <summary>
+             脚本类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSqlScript.frequency">
+            <summary>
+             执行频率
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSqlScript.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSqlScript.Clone">
+            <summary>
+            浅拷贝 只复制对象的基本类型,对象类型,仍属于原来的引用.
+            </summary>
+            <returns>MAccountBill</returns>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.ObjectNameTemplate">
+            <summary>
+            对象名模板
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.ScriptContent">
+            <summary>
+            脚本内容
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.ScriptType">
+            <summary>
+            脚本类型
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSqlScript.Frequency">
+            <summary>
+            执行频率
+            F:开户一次性(适用于hash划分规则）
+            X:手动一次性(适用于修改历史表结构）
+            R:按月周期性(适用于按时间划分规则）
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MDatabaseRealConnInfo">
+            <summary>
+            真实数据库拆分信息表
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDatabaseRealConnInfo.Conn">
+            <summary>
+            已建库的写连接 key:DataCenter机房
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDatabaseRealConnInfo.DatabaseRealInfo">
+            <summary>
+            真实库信息
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DalFactory">
+            <summary>
+            处理器工厂
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DalFactory.GetDDBRoute">
+            <summary>
+            获取数据库路由组件处理器
+            </summary>
+            <returns>数据库路由组件处理器</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DalFactory.GetConnectionRoute">
+            <summary>
+            获取ConnectionRoute处理器
+            </summary>
+            <returns>ConnectionRoute处理器</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DBRouteHelperException">
+            <summary>
+            数据库路由错误
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelperException.#ctor(System.Exception)">
+            <summary>
+            数据库路由错误
+            </summary>
+            <param name="innerException">捕获的错误</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DBRouteHelperException.#ctor(System.String)">
+            <summary>
+            数据库路由错误
+            </summary>
+            <param name="message">自己定义的错误说明</param>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo">
+            <summary>
+            多数据表拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.tableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.baseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.HashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.BeginBizTime">
+            <summary>
+            查询时间起始值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.EndBizTime">
+            <summary>
+            查询时间结束值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiTableInfo.BaseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MCreateOneTable">
+            <summary>
+            数据库创建信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.tableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.connString">
+            <summary>
+            连接字符串(真实库名、服务器地址)
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.realTableName">
+            <summary>
+            缺失的表名
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.ConnString">
+            <summary>
+            连接字符串(真实库名、服务器地址)
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateOneTable.RealTableName">
+            <summary>
+            缺失的表名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MCalendar517">
+            <summary>
+            517日期表
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCalendar517.NatureDate">
+            <summary>
+            每周第一天的自然日期
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCalendar517.WeekNum">
+            <summary>
+            周次
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ReadServerCache">
+            <summary>
+             读服务器缓存 Key:写服务器ID@写数据库ID:WriteServerKeyID+@+DatabaseKeyID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.ReadServerCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.ReadServerCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness">
+            <summary>
+            业务层
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.dbrouteDal">
+            <summary>
+            处理器
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.sleepSeconds">
+            <summary>
+            睡眠时间 30分钟
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.databaseInfoCache">
+            <summary>
+            数据库缓存 key:基础库名DatabaseName
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.databaseInfoCacheLock">
+            <summary>
+            数据库缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.writeServerByWriteDBKeyIDCache">
+            <summary>
+            写服务器缓存 Key:真实库名RealDatabaseName
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.writeServerByWriteDBKeyIDCacheLock">
+            <summary>
+            写服务器缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.writeServerAllCache">
+            <summary>
+            写服务器缓存 Key:写数据库IDwriteDatabaseKeyID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.writeServerAllCacheLock">
+            <summary>
+            写服务器缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.readServerCache">
+            <summary>
+            读服务器缓存 Key:写服务器ID@写数据库ID:WriteServerKeyID+@+DatabaseKeyID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.readServerCacheLock">
+            <summary>
+            读服务器缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.readServerByWriteDBKeyIDCache">
+            <summary>
+            读服务器缓存 Key:写映射ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.readServerByWriteDBKeyIDCacheLock">
+            <summary>
+            读服务器缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.accountCache">
+            <summary>
+            账号缓存 Key:数据库ID:databaseKeyID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.accountCacheLock">
+            <summary>
+            账号缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.splitRuleCache">
+            <summary>
+            拆分规则缓存 Key:基础库名@基础表名DatabaseName@tableName
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.splitRuleCacheLock">
+            <summary>
+            拆分规则缓存Lock
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.sqlScriptCache">
+            <summary>
+            脚本缓存 Key:基础库名@基础表名DatabaseName@tableName
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.sqlScriptCacheLock">
+            <summary>
+            脚本缓存Lock
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetDatabaseInfo(System.String)">
+            <summary>
+            获得当前数据库信息 MySql-DataBaseRoute-DatabaseInfo
+            </summary>
+            <param name="databaseName">基础库名</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetWriteServerByWriteDBKeyID(System.String)">
+            <summary>
+            根据写映射ID获得写服务器 ，不区分机房 MySql-DataBaseRoute-ConnectionRoute
+            </summary>
+            <param name="fullDatabaseName">真实库名</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetWriteServerByWriteDBKeyID(System.String,System.String)">
+            <summary>
+            【用写映射ID获取】取指定库名，在指定机房的写服务器 MySql-DataBaseRoute-ConnectionRoute
+            </summary>
+            <param name="fullDatabaseName">真实库名</param>
+            <param name="dataCenter">所属机房</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.realDBNameCacheTime">
+            <summary>
+            真实基础库名缓存时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.realDBNameCacheLock">
+            <summary>
+            真实基础库名缓存更新锁
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.realDBNameCache">
+            <summary>
+            真实基础库名缓存 传入库名- 真实基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.baseDbNameDic">
+            <summary>
+            真实库名- 基础库名缓存 
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.baseDbNameDicTime">
+            <summary>
+            基础库名缓存 更新时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.baseDbNameLock">
+            <summary>
+            基础库名缓存更新锁
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.fullDbNameDic">
+            <summary>
+            完整库名缓存  基础库名-完整库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.specialKeyDic">
+            <summary>
+            基础库对应特定值  key:基础表名 valu：对应特定值 XX|XY|ZZ
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.specialKeyDicTime">
+            <summary>
+            基础库对应特定值 更新时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.specialKeyDicLock">
+            <summary>
+            基础库对应特定值 锁
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetWriteServerAll(System.String)">
+            <summary>
+            清除本地缓存
+            取指定数据库ID配置了的所有写服务器 MySql-DataBaseRoute-WriteServerDBRelaAll
+            </summary>
+            <param name="writeDatabaseKeyID">写数据库ID</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetBaseDbName(System.String)">
+            <summary>
+            获取完整库名对应的基础库名
+            </summary>
+            <param name="fullDbname">完整数据库名</param>
+            <returns>基础表名</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetReadServerByWriteDBKeyID(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获得当前数据库信息 MySql-DataBaseRoute-DatabaseInfo
+            【用写映射ID获取】指定机房，指定应用程序 的读服务器
+            </summary>
+            <param name="writeServerDBKeyID">写映射ID</param>
+            <param name="dataCenter">读机房</param>
+            <param name="applicationName">应用程序</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetAccountInfo(System.String,System.String)">
+            <summary>
+            取指定数据库ID，指定应用程序的 连接账号 MySql-DataBaseRoute-DBAccountRela
+            </summary>
+            <param name="databaseKeyID">当前读写数据库ID</param>
+            <param name="applicationName">应用程序</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetRuleList(System.String,System.String)">
+            <summary>
+            取指定库和表的拆分规则 MySql-DataBaseRoute-SplitRuleInfo
+            </summary>
+            <param name="databaseName">基础库名</param>
+            <param name="tableName">基础表名</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetCreateTabelSql(System.String,System.String)">
+            <summary>
+            取指定库和表的建表语句 MySql-DataBaseRoute-SqlScript
+            </summary>
+            <param name="databaseName">基础库名</param>
+            <param name="tableName">基础表名</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetReadServer(System.String,System.String)">
+            <summary>
+            获得读服务器 MySql-DataBaseRoute-WriteServerDBRela
+            </summary>
+            <param name="writeDatabaseKeyID">写数据库ID</param>
+            <param name="writeServerKeyID">写服务器ID</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetReadServerByWriteDBKeyID(System.String)">
+            <summary>
+            获得读服务器 MySql-DataBaseRoute-WriteServerDBRela
+            </summary>
+            <param name="writeServerDBKeyID">写映射ID</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetDatabaseInfoFromDB(System.Object)">
+            <summary>
+            获得当前数据库信息 MySql-DataBaseRoute-DatabaseInfo
+            </summary>
+            <param name="databaseName">基础库名</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetWriteServerByWriteDBKeyIDFromDB(System.Object)">
+            <summary>
+            根据写映射ID获得写服务器 MySql-DataBaseRoute-ConnectionRoute
+            </summary>
+            <param name="fullDatabaseName">真实库名</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetWriteServerAllFromDB(System.Object)">
+            <summary>
+            获得所有写服务器 MySql-DataBaseRoute-WriteServerDBRelaAll
+            </summary>
+            <param name="writeDatabaseKeyID">写数据库ID</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetReadServerFromDB(System.Object)">
+            <summary>
+            获得读服务器 MySql-DataBaseRoute-WriteServerDBRela
+            </summary>
+            <param name="objectkey">writeServerKeyID + "@" + writeDatabaseKeyID</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetReadServerByWriteDBKeyIDFromDB(System.Object)">
+            <summary>
+            获得读服务器 MySql-DataBaseRoute-WriteServerDBRela
+            </summary>
+            <param name="writeServerDBKeyID">写映射ID</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetAccountInfoFromDB(System.Object)">
+            <summary>
+            获得连接账号 MySql-DataBaseRoute-DBAccountRela
+            </summary>
+            <param name="databaseKeyID">当前读写数据库ID</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetSpecialKeys(System.String)">
+            <summary>
+            获取基础库名对应特定值
+            </summary>
+            <param name="baseDbName">基础库名</param>
+            <returns>对应特定值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetRuleListFromDB(System.Object)">
+            <summary>
+            获得当前适用的拆分规则 MySql-DataBaseRoute-SplitRuleInfo
+            </summary>
+            <param name="objectkey">databaseName + "@" + tableName</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetCreateTabelSqlFromDB(System.Object)">
+            <summary>
+            获得建表语句 MySql-DataBaseRoute-SqlScript
+            </summary>
+            <param name="objectkey">databaseName + "@" + tableName</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetRealBaseDBName(System.String,System.DateTime)">
+            <summary>
+            获取真实基础数据库名
+            </summary>
+            <param name="databaseName">传入基础库名</param>
+            <param name="time">规则时间段</param>
+            <returns>真实基础库名</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.GetRealBaseDBName(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            获取真实基础数据库名
+            </summary>
+            <param name="databaseName">传入基础库名</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">截止时间</param>
+            <returns>映射基础库名及对应时间段</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.UpdateDbMappinginfo">
+            <summary>
+            更新基础表名映射缓存
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BGetDataLocalBusiness.UpdateDbNameRelay">
+            <summary>
+            更新数据库全名与基础库名关系缓存
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ReadServerByWriteDBKeyIDCache">
+            <summary>
+             读服务器缓存 Key:写映射ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.ReadServerByWriteDBKeyIDCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.ReadServerByWriteDBKeyIDCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo">
+            <summary>
+            单数据表拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.tableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.dbnameSwitchTime">
+            <summary>
+            数据库名选择时间 可以不传
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.baseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.HashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.BizTime">
+            <summary>
+            拆分时间值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.DbnameSwitchTime">
+            <summary>
+            数据库名选择时间 可以不传
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSingleTableInfo.BaseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MAllTableInfo">
+            <summary>
+            多数据表拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.tableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.baseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.BeginBizTime">
+            <summary>
+            查询时间起始值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.EndBizTime">
+            <summary>
+            查询时间结束值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllTableInfo.BaseDBNameSwitch">
+            <summary>
+            是否需要根据时间选择基础库名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo">
+            <summary>
+            MBaseDbMappingInfo类 
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.baseDbName">
+            <summary>
+            真实基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.startTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.endTime">
+            <summary>
+            截止时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.BaseDbName">
+            <summary>
+            真实基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MBaseDbMappingInfo.EndTime">
+            <summary>
+            真实基础库名
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DBAccountCache">
+            <summary>
+            数据库缓存 key:基础库名DatabaseName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.DBAccountCache.CacheData">
+            <summary>
+            账号缓存 Key:数据库ID:databaseKeyID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.DBAccountCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.IConnectionRoute">
+            <summary>
+            接口层ConnectionRoute
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IConnectionRoute.Add(System.Data.IDbTransaction,System.Data.IDbConnection,Better517na.Core.DB.DBRouteHelper.MConnectionRoute,System.String)">
+            <summary>
+            增加一条数据
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">IDbConnection</param>
+            <param name="model">model</param>
+            <param name="fullDatabaseName">真实库名</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.IConnectionRoute.Update(System.Data.IDbTransaction,System.Data.IDbConnection,Better517na.Core.DB.DBRouteHelper.MConnectionRoute,System.String)">
+            <summary>
+            更新一条数据
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">IDbConnection</param>
+            <param name="model">model</param>
+            <param name="fullDatabaseName">真实库名</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo">
+            <summary>
+            拆分规则信息  
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.databaseName">
+            <summary>
+             基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.tableName">
+            <summary>
+             基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.ruleIndex">
+            <summary>
+             规则顺序
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.ruleType">
+            <summary>
+             规则类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.ruleValue">
+            <summary>
+             规则值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.ruleConditionS">
+            <summary>
+             规则起始条件》=
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.ruleConditionE">
+            <summary>
+             规则结束条件《=
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.addTime">
+            <summary>
+             添加时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.startDate">
+            <summary>
+            生效日期
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.endDate">
+            <summary>
+            失效日期
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.SortByRuleConditionSAsc(Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo,Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo)">
+            <summary>
+            按RuleConditionS排序
+            </summary>
+            <param name="x">MSplitRuleInfo1</param>
+            <param name="y">MSplitRuleInfo2</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.SortByRuleValueAsc(Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo,Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo)">
+            <summary>
+            按RuleValue倒序
+            </summary>
+            <param name="x">MSplitRuleInfo1</param>
+            <param name="y">MSplitRuleInfo2</param>
+            <returns>int</returns>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.RuleIndex">
+            <summary>
+            规则顺序
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.RuleType">
+            <summary>
+            规则类型
+            1:特定值
+            2:时间值
+            3:哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.RuleValue">
+            <summary>
+            规则值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.RuleConditionS">
+            <summary>
+            规则起始条件》=
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.RuleConditionE">
+            <summary>
+            规则结束条件《=
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.StartDate">
+            <summary>
+            生效日期
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo.EndDate">
+            <summary>
+            失效日期
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.SqlScriptCache">
+            <summary>
+            脚本缓存 Key:基础库名@基础表名DatabaseName@tableName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.SqlScriptCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.SqlScriptCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.SplitRuleCache">
+            <summary>
+            拆分规则缓存 Key:基础库名@基础表名DatabaseName@tableName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.SplitRuleCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.SplitRuleCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DatabaseCache">
+            <summary>
+            数据库缓存 key:基础库名DatabaseName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.DatabaseCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.DatabaseCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BCreateBusiness">
+            <summary>
+            业务层
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BCreateBusiness.GetCreateDataSet(Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo)">
+            <summary>
+            获得需要建库的真实库名，若库已存在，则返回连接
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BCreateBusiness.CreateDataSet(Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo,System.String@)">
+            <summary>
+            自动建库
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BCreateBusiness.CreateTable(Better517na.Core.DB.DBRouteHelper.MCreateTableInfo,System.String@)">
+            <summary>
+            自动建表
+            </summary>
+            <param name="model">实体对象</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BCreateBusiness.CreateOneTable(Better517na.Core.DB.DBRouteHelper.MCreateOneTable)">
+            <summary>
+            创建表 Table not exist 时使用,建表脚本要在SqlScript中有配置才可
+            </summary>
+            <param name="model">实体对象</param>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DDBRoute">
+            <summary>
+            数据库路由组件操作类
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DDBRoute.GetDataSet(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            获得数据信息
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="str">执行语句</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DDBRoute.GetDataInfo(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            获得数据信息
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="str">执行语句</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DDBRoute.MySqlDbCreate(System.Data.IDbTransaction,System.Data.IDbConnection,System.String)">
+            <summary>
+            执行建库建表操作脚本
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">数据库连接</param>
+            <param name="scriptContent">建库建表脚本</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DDBRoute.MsSqlDbCreate(System.Data.IDbTransaction,System.Data.IDbConnection,System.String)">
+            <summary>
+            执行建库建表操作脚本
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">数据库连接</param>
+            <param name="scriptContent">建库建表脚本</param>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn">
+            <summary>
+            自动建库返回值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.databaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.DatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.NoDataBaseKeyID">
+            <summary>
+            写库ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.DatabaseRealInfo">
+            <summary>
+            拆分库信息
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.CreateAccount">
+            <summary>
+            建库账号
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfoReturn.WriteServer">
+            <summary>
+            所有写服务器
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MReadServerInfo">
+            <summary>
+            读服务器信息表  
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.weight">
+            <summary>
+             权重
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.applicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.SortByWeightAsc(Better517na.Core.DB.DBRouteHelper.MReadServerInfo,Better517na.Core.DB.DBRouteHelper.MReadServerInfo)">
+            <summary>
+            按权重顺序排序
+            </summary>
+            <param name="x">MReadServerInfo1</param>
+            <param name="y">MReadServerInfo2</param>
+            <returns>int</returns>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.Weight">
+            <summary>
+            权重
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MReadServerInfo.ApplicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo">
+            <summary>
+            多数据表拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.tableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.sqlScript">
+            <summary>
+            建库建表语句
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.TableName">
+            <summary>
+            基础表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.NoTables">
+            <summary>
+            已知的需要创建的表，若传了这个参数，则另外的3个拆分字段值，将不再使用
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateTableSubInfo.SqlScript">
+            <summary>
+            建表语句
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.DConnectionRoute">
+            <summary>
+            数据访问类:ConnectionRoute
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DConnectionRoute.Add(System.Data.IDbTransaction,System.Data.IDbConnection,Better517na.Core.DB.DBRouteHelper.MConnectionRoute,System.String)">
+            <summary>
+            增加一条数据
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">IDbConnection</param>
+            <param name="model">model</param>
+            <param name="fullDatabaseName">真实库名</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.DConnectionRoute.Update(System.Data.IDbTransaction,System.Data.IDbConnection,Better517na.Core.DB.DBRouteHelper.MConnectionRoute,System.String)">
+            <summary>
+            更新一条数据
+            </summary>
+            <param name="trans">IDbTransaction</param>
+            <param name="conn">IDbConnection</param>
+            <param name="model">model</param>
+            <param name="fullDatabaseName">真实库名</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.ConnectionFactory">
+            <summary>
+            连接对象创建类：创建指定KEY对应的数据库连接
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.#cctor">
+            <summary>
+            构造函数：初始化读取配置文件
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.GetDataBaseRouteRead">
+            <summary>
+            返回DataBaseRouteRead读库连接
+            </summary>
+            <returns>连接对象</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.GetDataBaseRouteWrite">
+            <summary>
+            返回DataBaseRouteWrite写库连接
+            </summary>
+            <returns>连接对象</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.GetConnection(System.String)">
+            <summary>
+            根据连接Key取得连接
+            </summary>
+            <param name="connectionKey">数据库连接配置KEY</param>
+            <returns>数据库连接 IDbConnection</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.GetProviderName(System.String)">
+            <summary>
+            取得配置中连接属性ProviderName
+            </summary>
+            <param name="connectionKey">数据库连接配置KEY</param>
+            <returns>数据库连接属性ProviderName</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.InitConnectionConfig">
+            <summary>
+            初始化数据库连接配置
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.ConnectionFactory.Conn(System.String)">
+            <summary>
+            解密连接字符串，生成解密后的连接字符串
+            </summary>
+            <param name="conn">原始字符串 string</param>
+            <returns>解密后的串 string</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo">
+            <summary>
+            账号基础表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.uID">
+            <summary>
+             用户名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.pWD">
+            <summary>
+             密码
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.encryptType">
+            <summary>
+             加密方式
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.ApplicationName">
+            <summary>
+            应用程序名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.UID">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.PWD">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBAccountInfo.EncryptType">
+            <summary>
+            加密方式
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.WriteServerByWriteDBKeyIDCache">
+            <summary>
+            写服务器缓存 Key:真实库名RealDatabaseName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerByWriteDBKeyIDCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerByWriteDBKeyIDCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans">
+            <summary>
+            DatabaseInfo
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.dbtype">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.sqlScript">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.route">
+            <summary>
+            建库建表SQL脚本
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.#ctor(Better517na.Core.DB.DBRouteHelper.EDatabaseType,System.Data.IDbConnection,System.Collections.Generic.List{Better517na.Core.DB.DBRouteHelper.MSqlScript},Better517na.Core.DB.DBRouteHelper.MConnectionRoute,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="databaseType">数据库类型</param>
+            <param name="conn">连接</param>
+            <param name="sql">建库建表SQL脚本</param>
+            <param name="connectionRoute">路由信息，建库传入</param>
+            <param name="isBeginTrans">是否开启事务</param>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.ExecuteMethods">
+            <summary>
+            执行数据持久化
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.Committed">
+            <summary>
+            事务提交后处理动作，如果不要求开启事物(isBeginTransaction=false)将不会执行此方法
+            构造账单数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.IsSaveConnectionRoute">
+            <summary>
+            路由信息，建库传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.IsSucc">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.BSqlDbCreateTrans.ErrMsg">
+            <summary>
+            操作错误信息
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo">
+            <summary>
+            真实数据库拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.realName">
+            <summary>
+            真实库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.specialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.hashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.beginBizTime">
+            <summary>
+            拆分时间起始值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.endBizTime">
+            <summary>
+            拆分时间结束值
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.RealName">
+            <summary>
+            真实库名|真实表名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.RealBaseDbName">
+            <summary>
+            真实基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.HashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.BeginBizTime">
+            <summary>
+            拆分时间起始值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MDBObjectRealInfo.EndBizTime">
+            <summary>
+            拆分时间结束值
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo">
+            <summary>
+            自动建库参数
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.realDatabaseName">
+            <summary>
+            真实库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.databaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.sqlScript">
+            <summary>
+            建库建表语句
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.RealDatabaseNameList">
+            <summary>
+            真实库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.DatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.WriteDataBaseKeyID">
+            <summary>
+            写库ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.WriteServerInfo">
+            <summary>
+            写服务器信息
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.CreateAccount">
+            <summary>
+            建库账号
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MCreateDatabaseInfo.SqlScript">
+            <summary>
+            建库建表语句
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MConnectionRoute">
+            <summary>
+            写库连接路由表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.keyID">
+            <summary>
+             主键ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.databaseKeyID">
+            <summary>
+             数据库ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.serverKeyID">
+            <summary>
+             连接ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.writeServerDBKeyID">
+            <summary>
+             写映射ID
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.state">
+            <summary>
+             状态
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.isDelete">
+            <summary>
+             是否删除
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.Clone">
+            <summary>
+            浅拷贝 只复制对象的基本类型,对象类型,仍属于原来的引用.
+            </summary>
+            <returns>MAccountBill</returns>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.KeyID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.DatabaseKeyID">
+            <summary>
+            写数据库ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.ServerKeyID">
+            <summary>
+            写服务器ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.WriteServerDBKeyID">
+            <summary>
+            写映射ID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.FullDatabaseNameList">
+            <summary>
+            真实库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MConnectionRoute.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.WriteServerAllCache">
+            <summary>
+            写服务器缓存 Key:写数据库IDwriteDatabaseKeyID
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerAllCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerAllCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor">
+            <summary>
+            配置文件监听器类：监听配置文件变更 
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.callParamConfig">
+            <summary>
+            连接配置 Configuration
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.map">
+            <summary>
+            连接配置文件 ExeConfigurationFileMap
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.#cctor">
+            <summary>
+            构造函数:初始化读取配置文件，为文件注册侦听器
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.MonitorConfigFile">
+            <summary>
+            创建配置文件发动监听器
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.RaiseEvent">
+            <summary>
+            向订阅者发布信息（配置文件变更时）
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.InitConnectionConfig">
+            <summary>
+            初始化数据库连接配置
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.OnChanged(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            文件改变：重新加载配置
+            </summary>
+            <param name="source">事件源 object</param>
+            <param name="e">事件参数 FileSystemEventArgs</param>
+        </member>
+        <member name="E:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.ConfigModifyInfoEvent">
+            <summary>
+            配置文件变更事件 event
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.CallParamConfig">
+            <summary>
+            配置对象 Configuration
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BedrockConfigMonitor.EventHandlerAfterConfigModify">
+            <summary>
+            配置文件变更代理 delegate
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo">
+            <summary>
+            多单数据库拆分信息表
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.applicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.isRead">
+            <summary>
+            是否取读连接
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.dbnameSwitchTime">
+            <summary>
+            基础库名选择条件-时间
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.baseDBNameSwitch">
+            <summary>
+            是否使用基础库名映射
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.ApplicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.IsRead">
+            <summary>
+            是否取读连接
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.HashKey">
+            <summary>
+            拆分哈希值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.BeginBizTime">
+            <summary>
+            查询时间起始值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.EndBizTime">
+            <summary>
+            查询时间结束值，要求必须传入
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.DbnameSwitchTime">
+            <summary>
+            数据库名选择时间 可以不传
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo.BaseDBNameSwitch">
+            <summary>
+            是否使用基础库名映射
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo">
+            <summary>
+            自动建库参数
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.applicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.databaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.beginBizTime">
+            <summary>
+            拆分时间起始值
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.endBizTime">
+            <summary>
+            拆分时间结束值
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.DatabaseName">
+            <summary>
+            基础库名
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.SpecialKey">
+            <summary>
+            拆分特定值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.BeginBizTime">
+            <summary>
+            拆分时间起始值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.EndBizTime">
+            <summary>
+            拆分时间结束值
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MGetCreateDatabaseInfo.ApplicationName">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.MAllDataBaseTableInfo">
+            <summary>
+            数据库-表信息
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllDataBaseTableInfo.DataBaseInfo">
+            <summary>
+            数据库信息
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.MAllDataBaseTableInfo.TableInfo">
+            <summary>
+            数据库对应表
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.BDBRoute">
+            <summary>
+            业务层
+            </summary>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetSingleConnection(Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo)">
+            <summary>
+            获得读、写连接【取就近机房】
+            </summary>
+            <param name="model">实体对象[创建表，使用写库连接]</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetTarConnection(System.String,System.Boolean,System.String)">
+            <summary>
+            获得读、写连接【取就近机房】
+            </summary>
+            <param name="realDataBaseName">真实数据库名</param>
+            <param name="isread">是否取读库</param>
+            <param name="applicationName"></param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetDoubleConnection(Better517na.Core.DB.DBRouteHelper.MSingleDatabaseInfo)">
+            <summary>
+            获得读、写连接【双读双写，取两个机房】
+            </summary>
+            <param name="model">实体对象[创建表，使用写库连接]</param>
+            <returns>执行结果 key:DataCenter机房</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetMutiConnection(Better517na.Core.DB.DBRouteHelper.MMutiDatabaseInfo)">
+            <summary>
+            获得区间内的多个读、写连接【取就近机房】
+            </summary>
+            <param name="model">实体对象[创建表，使用写库连接]</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetSingleTableName(Better517na.Core.DB.DBRouteHelper.MSingleTableInfo)">
+            <summary>
+            获得表名
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetMutiTableName(Better517na.Core.DB.DBRouteHelper.MMutiTableInfo,System.Int32)">
+            <summary>
+            获得区间内的多个表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="tableType">0:查询获取表，1：数据库生成表</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetMutiTableNameInner(Better517na.Core.DB.DBRouteHelper.MMutiTableInfo,System.Int32)">
+            <summary>
+            获得区间内的多个表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="tableType">0:查询获取表，1：数据库生成表</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetAllTableName(Better517na.Core.DB.DBRouteHelper.MAllTableInfo,System.String)">
+            <summary>
+            获得所有表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="realBaseDbname">真实基础库名</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetTableNameInternal(Better517na.Core.DB.DBRouteHelper.MAllTableInfo)">
+            <summary>
+            获取所有表名 内部逻辑
+            </summary>
+            <param name="model">实体对象</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetSingleTableName(Better517na.Core.DB.DBRouteHelper.MSingleTableInfo,System.Collections.Generic.List{Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo})">
+            <summary>
+            获得表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="ruleList">适用规则集合</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetMutiTableName(Better517na.Core.DB.DBRouteHelper.MMutiTableInfo,System.Int32,System.Collections.Generic.List{Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo})">
+            <summary>
+            获得区间内的多个表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="tableType">0:查询获取表，1：数据库生成表</param>
+            <param name="ruleList">适用规则集合</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="M:Better517na.Core.DB.DBRouteHelper.BDBRoute.GetAllTableName(Better517na.Core.DB.DBRouteHelper.MAllTableInfo,System.Collections.Generic.List{Better517na.Core.DB.DBRouteHelper.MSplitRuleInfo})">
+            <summary>
+            获得区间内的多个表名
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="ruleList">适用规则集合</param>
+            <returns>MDatabaseRealInfo类型返回值，里面也包含了真实的表名，以及每个表使用的拆分值</returns>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.EConnectionType">
+            <summary>
+            连接类型
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EConnectionType.Read">
+            <summary>
+            1读
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EConnectionType.Write">
+            <summary>
+            2写
+            </summary>
+        </member>
+        <member name="F:Better517na.Core.DB.DBRouteHelper.EConnectionType.Create">
+            <summary>
+            3创建
+            </summary>
+        </member>
+        <member name="T:Better517na.Core.DB.DBRouteHelper.WriteServerCache">
+            <summary>
+            写服务器缓存 Key:真实库名RealDatabaseName
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerCache.CacheData">
+            <summary>
+            缓存数据
+            </summary>
+        </member>
+        <member name="P:Better517na.Core.DB.DBRouteHelper.WriteServerCache.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+    </members>
+</doc>

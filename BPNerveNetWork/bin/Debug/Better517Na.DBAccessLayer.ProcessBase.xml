@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Better517Na.DBAccessLayer.ProcessBase</name>
+    </assembly>
+    <members>
+        <member name="T:Better517Na.DBAccessLayer.ProcessBase.IDALBase">
+            <summary>
+            数据库访问公共接口
+            </summary>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Add``1(``0)">
+            <summary>
+            增加一条数据
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="model">对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Update``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            带参数更新数据
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="model">实体实例</param>
+            <param name="mmb">参数对象实例</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Update``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            更新多条数据(已经解决，更新字段和条件字段重复的问题)
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象实例</param>
+            <param name="mmb">参数实例</param>
+            <param name="limitCount">限制条数</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Delete``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            删除一条数据
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="model">实体实例</param>
+            <param name="mmb">参数对象实例</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.GetModel``1(``0)">
+            <summary>
+            得到一个对象实体
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="model">实体实例</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.GetModel``1(Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            得到一个对象实体(不支持分表)
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="mmb">参数对象实例</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.GetModel``1(Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            得到对象实体列表(不支持分表)
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="mmb">参数对象实例</param>
+            <param name="limitcount">限制记录行数</param>
+            <returns>实体对象列表</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.GetModel``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            得到一个对象实体
+            </summary>
+            <typeparam name="T">实体对象类型</typeparam>
+            <param name="model">实体对象</param>
+            <param name="mmb">参数对象实例</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.IDALBase.GetModel``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            得到对象实体列表
+            </summary>
+            <typeparam name="T">实体对象类型</typeparam>
+            <param name="model">实体对象</param>
+            <param name="mmb">参数对象实例</param>
+            <param name="limitcount">限制记录行数</param>
+            <returns>实体对象列表</returns>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.IDALBase.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Trans">
+            <summary>
+            事务对象
+            </summary>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.IDALBase.Conn">
+            <summary>
+            连接对象
+            </summary>
+        </member>
+        <member name="T:Better517Na.DBAccessLayer.ProcessBase.MModelBase">
+            <summary>
+            数据库操作实体基类
+            </summary>
+        </member>
+        <member name="F:Better517Na.DBAccessLayer.ProcessBase.MModelBase.updatefields">
+            <summary>
+            更新字段或查询时的输出字段
+            </summary>
+        </member>
+        <member name="F:Better517Na.DBAccessLayer.ProcessBase.MModelBase.conditionfields">
+            <summary>
+            条件字段
+            </summary>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.AddUpdateFields(System.String,System.Object)">
+            <summary>
+            添加更新字段或查询时的输出字段(存在就覆盖)
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.AddConditionFields(System.String,System.Object)">
+            <summary>
+            添加条件字段(存在就覆盖)
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.RemoveUpdateFields(System.String)">
+            <summary>
+            移除更新字段或查询时的输出字段
+            </summary>
+            <param name="name">名称</param>       
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.RemoveConditionFields(System.String)">
+            <summary>
+            移除条件字段
+            </summary>
+            <param name="name">名称</param>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.GetMysqlUpdatePara``1(``0)">
+            <summary>
+            获得更新参数
+            </summary>
+            <typeparam name="T">实例对象类型</typeparam>
+            <param name="model">实例参数</param>
+            <returns>参数集合</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.GetMysqlConditionPara``1(``0)">
+            <summary>
+            获得条件参数
+            </summary>
+            <typeparam name="T">实例对象</typeparam>
+            <param name="model">实例参数</param>
+            <returns>mysql参数集合</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.MModelBase.GetMySqlDbType(System.Type)">
+            <summary>
+            将属性类型转化为MYSQL数据库类型
+            </summary>
+            <param name="type">属性类型</param>
+            <returns>MYSQL数据库类型</returns>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.MModelBase.UpdateFields">
+            <summary>
+            更新字段
+            </summary>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.MModelBase.ConditionFields">
+            <summary>
+            条件字段
+            </summary>
+        </member>
+        <member name="T:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase">
+            <summary>
+            Mysql数据库操作基类
+            </summary>
+        </member>
+        <member name="F:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.conn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.#ctor(System.Data.IDbConnection)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="conn">数据库操作类型</param>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Add``1(``0)">
+            <summary>
+            添加单条数据
+            </summary>
+            <typeparam name="T">实例对象</typeparam>
+            <param name="model">实例参数</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetModel``1(``0)">
+            <summary>
+            获取单条记录（未实现）
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象</param>
+            <returns> 对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetModel``1(Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            得到一个对象实体(不支持分表)
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="mmb">参数对象实例</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetModel``1(Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            得到对象实体列表(不支持分表)
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="mmb">参数对象实例</param>
+            <param name="limitcount">限制记录行数</param>
+            <returns>实体对象列表</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetModel``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            得到一个对象实体
+            </summary>
+            <typeparam name="T">实体对象类型</typeparam>
+            <param name="model">实体对象</param>
+            <param name="mmb">参数对象实例</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetModel``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            得到对象实体列表
+            </summary>
+            <typeparam name="T">实体对象类型</typeparam>
+            <param name="model">实体对象</param>
+            <param name="mmb">参数对象实例</param>
+            <param name="limitcount">限制记录行数</param>
+            <returns>实体对象列表</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetTableName``1(``0)">
+            <summary>
+            构造表名
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象</param>
+            <returns>表名</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Delete``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            未实现，可用Update实现逻辑删除
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象实例</param>
+            <param name="mmb">参数实例</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Update``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase)">
+            <summary>
+            更新单条数据
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象实例</param>
+            <param name="mmb">参数实例</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Update``1(``0,Better517Na.DBAccessLayer.ProcessBase.MModelBase,System.Int32)">
+            <summary>
+            更新多条数据(已经解决，更新字段和条件字段重复的问题)
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="model">实体对象实例</param>
+            <param name="mmb">参数实例</param>
+            <param name="limitCount">限制条数</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.GetMySqlDbType(System.Type)">
+            <summary>
+            将属性类型转化为MYSQL数据库类型
+            </summary>
+            <param name="type">属性类型</param>
+            <returns>MYSQL数据库类型</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Getmypar(System.Collections.Generic.List{MySql.Data.MySqlClient.MySqlParameter},MySql.Data.MySqlClient.MySqlParameter,System.Int32)">
+            <summary>
+            处理where条件单个字段多参数问题
+            </summary>
+            <param name="parameters">参数计划</param>
+            <param name="mypar">当个参数</param>
+            <param name="index">当前索引</param>
+            <returns>参数对象</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.FillModel``1(System.Data.DataSet)">
+            <summary>
+            填充Model
+            </summary>
+            <param name="ds">ds</param>
+            <returns>model列表</returns>
+        </member>
+        <member name="M:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.SetModelValue``1(``0,System.Object,System.String)">
+            <summary>
+            SetModelValue
+            </summary>
+            <param name="mwi">mwi</param>
+            <param name="obj">obj</param>
+            <param name="parameterName">ParameterName</param>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Conn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.Trans">
+            <summary>
+            如需打开事务请赋值，提交神马的就只有自己做了
+            </summary>
+        </member>
+        <member name="P:Better517Na.DBAccessLayer.ProcessBase.DMySQLDALBase.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+    </members>
+</doc>
